@@ -1,0 +1,19 @@
+<div id="score_form">
+  <form (submit)="onSubmit()" #scoreForm="ngForm">
+    <h2>GitHub Score</h2>
+    <table>
+      <tr>
+        <td>GitHub Username:</td>
+        <td><input type="text" name="username" [(ngModel)]="newUser.username"></td>
+      </tr>
+      <tr>
+        <td><input type="submit" value="Calculate my Github Score"></td>
+      </tr>
+    </table>
+  </form>
+</div>
+<div id="score_score">
+  <h2>Your Score:{{user.followers + user.public_repos}} </h2>
+</div>
+
+<!-- {{user | json}} -->

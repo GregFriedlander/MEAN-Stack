@@ -1,0 +1,11 @@
+<h1>US Time Zone Display</h1>
+
+<!-- <button (click)="onButtonClick()">PST</button>
+<button (click)="onButtonClick()">MST</button>
+<button (click)="onButtonClick()">CST</button>
+<button (click)="onButtonClick()">EST</button>
+<button (click)="onButtonClick()">Clear</button> -->
+
+<button *ngFor="let button of timezones" (click)="onButtonClick(button.time, button)" [ngStyle]="{'background-color': button.color}" >{{ button.name }}</button>
+
+<h6 [ngStyle]="{'font-size': '30px'}">{{ today | date:'medium' }}</h6>

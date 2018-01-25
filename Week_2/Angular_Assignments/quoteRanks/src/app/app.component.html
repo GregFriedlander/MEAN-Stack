@@ -1,0 +1,3 @@
+<h1>App Component</h1>
+<app-add-quote (addNewQuote)="addQuoteFromChild($event)" ></app-add-quote>
+<app-quote-list [myQuotes]="quotes" (deleteQuoteEvent)="deleteQuoteFromArray($event)"></app-quote-list>

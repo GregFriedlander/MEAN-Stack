@@ -1,0 +1,8 @@
+<fieldset>
+  <h2>Add a new note:</h2>
+  <form (submit)="onSubmit()" #noteForm="ngForm">
+    <p>Note: <input type="text" name="content" [(ngModel)]="newNote.content" #content='ngModel' required minlength= 3></p>
+    <p *ngIf="content.invalid && content.touched" [ngStyle]="{'color': 'red'}">Note must be at least 3 characters</p>
+    <input type="submit" value="Add Note" [disabled]="noteForm.invalid">
+  </form>
+</fieldset>

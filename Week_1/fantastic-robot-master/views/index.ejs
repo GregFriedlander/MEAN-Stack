@@ -1,0 +1,37 @@
+<html>
+<head>
+<title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type ="text/javascript">
+        $(document).ready(function (){
+            // this triggers the connection event in our server!
+            var socket  = io.connect();
+            // we'll write all the socket stuff after the above line!
+            
+            socket.on( 'server_response', function (data){
+                console.log( 'The server says: '  + data.response);
+            });
+
+            $( '#larger').click(function (){
+                socket.emit( "change_font", {size: '60px'});
+            });
+            $( '#smaller').click(function (){
+                socket.emit( "change_font", {size: '12px'});
+            });
+            socket.on('new_size', function(data){
+                console.log("the server wants the size to be:", data.size);
+                $('#test').css('font-size', data.size);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2 id="test">Test</h2>
+    <button id="larger">Larger</button>
+    <button id="smaller">Smaller</button>
+
+    <!-- web page goes here -->
+</body>
+</html>

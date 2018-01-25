@@ -1,0 +1,14 @@
+<h3>Browse All Bikes</h3>
+
+<input type="text" name="search" [(ngModel)]="searchTerm" (keyup)="searchListings(searchTerm)">
+
+<br>
+
+<div [ngStyle]="{'border':'solid black 1px'}" *ngFor="let listing of shownListing">
+  <p>Title: {{listing.title}}</p>
+  <p>Description: {{listing.description}}</p>
+  <p>Price: ${{listing.price}}</p>
+  <p>Locatin: {{listing.location}}</p>
+  <button>Delete</button>
+  <button>Contact</button>
+</div>

@@ -1,0 +1,7 @@
+<fieldset>
+<h2>App Component</h2>
+<p>{{users|json}}</p>
+
+<app-register (registerEventEmitter)="addUserFromChild($event)"></app-register>
+<app-list [myUsers]="users"></app-list>
+</fieldset>

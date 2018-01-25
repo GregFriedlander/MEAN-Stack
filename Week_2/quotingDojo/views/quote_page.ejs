@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quote Page</title>
+</head>
+<body>
+    <h1>Here are the Awesome Quotes!</h1>
+    <br>
+    <ul>
+        <% for (var i = 0; i < quotes.length; i++) { %>
+            <li>"<%= quotes[i].quote %>" by <%= quotes[i].name %> on <%= quotes[i].createdAt %></li>
+        <% } %>
+    </ul>
+</body>
+</html>

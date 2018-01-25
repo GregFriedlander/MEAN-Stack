@@ -1,0 +1,71 @@
+<h1>Registration</h1>
+
+<p *ngIf="submitted"> Thank you for registering with us {{ user.first_name }} {{ user.last_name }}. We just sent you a confirmation email
+    at <a href="">{{ user.email }}</a>, and we will send all mail to {{ user.street_address }}, {{ user.city }} {{ user.state }}. Have a wonderful day.
+</p>
+
+<form (submit)="onSubmit()" #userForm="ngForm">
+    <h3>Account Information</h3>
+    <table>
+        <tr>
+            <td>*First Name:</td>
+            <td><input type="text" name="first_name" [(ngModel)]="newUser.first_name" #firstname='ngModel' required></td>
+            <td *ngIf="firstname.invalid && firstname.touched" [ngStyle]="{'color': 'red'}">First Name is Required</td>
+        </tr>
+        <tr>
+            <td>*Last Name:</td>
+            <td><input type="text" name="last_name" [(ngModel)]="newUser.last_name" #lastname='ngModel' required></td>
+            <td *ngIf="lastname.invalid && lastname.touched" [ngStyle]="{'color': 'red'}">Last Name is Required</td>
+        </tr>
+        <tr>
+            <td>*Email:</td>
+            <td><input type="text" name="email" [(ngModel)]="newUser.email" #email='ngModel' required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"></td>
+            <td *ngIf="email.invalid && email.touched" [ngStyle]="{'color': 'red'}">Email must be valid</td>
+        </tr>
+        <tr>
+            <td>*Password:</td>
+            <td><input type="text" name="password" [(ngModel)]="newUser.password" #password='ngModel' required minlength= 16 ></td>
+            <td *ngIf="password.invalid && password.touched" [ngStyle]="{'color': 'red'}">Password must be at least 16 characters long</td>
+        </tr>
+        <tr>
+            <td>*Password Confirmation:</td>
+            <td><input type="text" name="password_confirmation" [(ngModel)]="newUser.password_confirmation" #passwordconfirmation='ngModel'required></td>
+            <td *ngIf="newUser.password != newUser.password_confirmation" [ngStyle]="{'color': 'red'}">Passwords must match</td>
+        </tr>
+        <tr>
+            <td>*Street Address:</td>
+            <td><input type="text" name="street_address" [(ngModel)]="newUser.street_address" #streetaddress='ngModel' required></td>
+            <td *ngIf="streetaddress.invalid && streetaddress.touched" [ngStyle]="{'color': 'red'}">Address is required</td>
+        </tr>
+        <tr>
+            <td>Unit/Apt #:</td>
+            <td><input type="text" name="unit_apt" [(ngModel)]="newUser.unit_apt" #unitapt='ngModel'></td>
+        </tr>
+        <tr>
+            <td>*City:</td>
+            <td><input type="text" name="city" [(ngModel)]="newUser.city" #city='ngModel' required></td>
+            <td *ngIf="city.invalid && city.touched" [ngStyle]="{'color': 'red'}">City is required</td>
+        </tr>
+        <tr>
+            <td>*State:</td>
+            <td>
+                <select name="state" [(ngModel)]="newUser.state" #state='ngModel' required>
+                    <option value="california">California</option>
+                    <option value="washington">Washington</option>
+                    <option value="texas">Texas</option>
+                </select>
+            </td>
+            <td *ngIf="state.invalid && state.touched" [ngStyle]="{'color': 'red'}">State is required</td>
+        </tr>
+        <tr>
+            <td>*I'm feeling Lucky:</td>
+            <td><input type="radio" name="lucky" value="yes" [(ngModel)]="newUser.lucky" #lucky='ngModel' required>Yes
+            <input type="radio" name="lucky" value="no" [(ngModel)]="newUser.lucky" required>No</td>
+            <td *ngIf="lucky.invalid && lucky.touched" [ngStyle]="{'color': 'red'}">Choosing how you feel is required</td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Register" [disabled]="userForm.invalid || newUser.password != newUser.password_confirmation"></td>
+            <td *ngIf="userForm.invalid" [ngStyle]="{'color': 'red'}">Please fill out the whole form</td>
+        </tr>
+    </table>
+</form>

@@ -1,0 +1,28 @@
+<form (submit)="onSubmit()"  #userForm="ngForm">
+	<p>
+		Name: <input type="text" name="name" 
+		[(ngModel)]="newUser.name"
+		#name = 'ngModel' 
+		required
+		minlength = 4 
+		>
+	</p>
+	<p *ngIf="name.invalid && name.touched">
+	Name must be at least 4 characters long</p>
+	<p>
+		Description: <input type="text" name="desc" 
+		[(ngModel)]="newUser.desc"
+		pattern="^[a-z]+$"
+		#desc="ngModel"
+		>
+	</p>
+	<p  *ngIf="desc.invalid">Must be lowercase and one word</p>
+	<input type="submit" name=""
+	[disabled]="userForm.invalid"
+	>
+	<p *ngIf="userForm.invalid">Please fill out the form</p>
+</form>
+<h2>These are your users:</h2>
+<ol>
+	<li *ngFor="let user of users">{{user.name}} - {{user.desc}}</li>
+</ol>

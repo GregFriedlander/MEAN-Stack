@@ -1,0 +1,29 @@
+<fieldset>
+	<h2>Register Component</h2>
+	<form (submit)="onSubmit()"  #userForm="ngForm">
+		<p>
+			Name: <input type="text" name="name" 
+			[(ngModel)]="newUser.name"
+			#name = 'ngModel' 
+			required
+			minlength = 4 
+			>
+		</p>
+		<p *ngIf="name.invalid && name.touched">
+		Name must be at least 4 characters long</p>
+		<p>
+			Description: <input type="text" name="desc" 
+			[(ngModel)]="newUser.desc"
+			pattern="^[a-z]+$"
+			#desc="ngModel"
+			>
+		</p>
+		<p  *ngIf="desc.invalid">Must be lowercase and one word</p>
+		<p  *ngIf="newUser.name != newUser.desc">Must match</p>
+		<input type="submit" name=""
+		[disabled]="userForm.invalid || (newUser.name != newUser.desc)"
+		>
+		<p *ngIf="userForm.invalid">Please fill out the form</p>
+	</form>
+	
+</fieldset>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS Intermediate</title>
+</head>
+<body>
+    <script>
+
+        // Part 1
+
+        function starString(num){
+            var newString = "";
+            for(var x = 0; x < num; x++){
+                newString += "*";
+            }
+            return newString;
+        };
+
+        // Part 2
+
+        // function drawStars(arr) {
+        //     for(var x = 0; x < arr.length; x++){
+        //         var stringStar = "";
+        //         for(var y = 0; y < arr[x]; y++) {
+        //             stringStar += "*"
+        //         }
+        //         console.log(stringStar);
+        //     }
+        // };
+
+        // Part 3
+
+        function drawStars(arr){
+            for(var x = 0; x < arr.length; x++) {
+                var newString2 = "";
+                if(typeof arr[x] === "number"){
+                    for(var y = 0; y < arr[x]; y++) {
+                        newString2 += "*";
+                    }
+                    console.log(newString2);
+                }
+                else if(typeof arr[x] === "string") {
+                    for(var z = 0; z < arr[x].length; z++){
+                        newString2 += arr[x][0].toLowerCase();
+                    }
+                    console.log(newString2);
+                }
+            }
+        }
+    
+    
+    
+    
+    </script>
+</body>
+</html>

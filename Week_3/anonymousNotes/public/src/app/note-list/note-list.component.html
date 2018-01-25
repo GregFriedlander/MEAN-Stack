@@ -1,0 +1,5 @@
+<h2>List of notes</h2>
+
+<div *ngFor="let note of notes | sortgrid: '-createdAt'">
+  <p>{{ note.content }} - Noted Created at: {{ note.createdAt | date:'medium' }}</p>
+</div>

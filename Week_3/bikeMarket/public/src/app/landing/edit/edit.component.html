@@ -1,0 +1,14 @@
+<fieldset>
+
+  <h3>Edit/Delete Listings</h3>
+
+  <table>
+    <tr *ngFor="let bike of yourListings">
+      <td>{{bike.title}}</td>
+      <td>{{bike.description}}</td>
+      <td>${{bike.price}}</td>
+      <td>{{bike.location}}</td>
+    </tr>
+  </table>
+
+</fieldset>

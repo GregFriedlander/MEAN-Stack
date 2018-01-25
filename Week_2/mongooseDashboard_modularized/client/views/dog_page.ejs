@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dog Page</title>
+</head>
+<body>
+    <h1><%= dogs[0].name %>'s Profile</h1>
+    
+    <p>This dog's name is <%= dogs[0].name %></p>
+    <p>Its coat is <%= dogs[0].color %></p>
+    <p>It weighs <%= dogs[0].weight %> pounds</p>
+
+    <a href="/dogs/edit/<%=dogs[0]._id%>"><button>Edit</button></a>
+
+    <form action="/dogs/destroy/<%=dogs[0]._id%>" method="POST">
+        <input type="submit" value="Delete Dog">
+    </form>
+
+</body>
+</html>

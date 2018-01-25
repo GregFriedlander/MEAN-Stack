@@ -1,0 +1,19 @@
+<fieldset>
+  <h3>Quote List Component</h3>
+  <div class="indvQuote" *ngFor="let quote of myQuotes | orderBy : 'rating' ">
+      <div class="quoteContents">
+        <p>"{{quote.quote}}"</p>
+        <p>{{quote.author}}</p>
+      </div>
+      <div class="quoteRating">
+        <p *ngIf="quote.rating == 0"></p>
+        <p *ngIf="quote.rating > 0">+{{quote.rating}}</p>
+        <p *ngIf="quote.rating < 0">{{quote.rating}}</p>
+      </div>
+      <div class="quoteButtons">
+        <button (click)="voteUp(quote)">Vote Up</button>
+        <button (click)="voteDown(quote)">Vote Down</button>
+        <button (click)="deleteQuote(quote)">Delete</button>
+      </div>
+  </div>
+</fieldset>

@@ -1,0 +1,9 @@
+.location {
+    display: inline-block;
+    width: 100px;
+    height: 150px;
+    border: solid black 1px;
+    vertical-align: top;
+    margin: 20px;
+    padding: 10px;
+}

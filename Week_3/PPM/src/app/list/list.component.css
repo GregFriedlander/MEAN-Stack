@@ -1,0 +1,9 @@
+.productDiv{
+    display: inline-block;
+    padding: 5px;
+    margin: 5px;
+    width: 120px;
+    height: 200px;
+    vertical-align: top;
+    border: 1px solid black;
+}

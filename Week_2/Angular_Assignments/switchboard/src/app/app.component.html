@@ -1,0 +1,9 @@
+<h1>Switchboard</h1>
+
+<div class="main">
+
+  <div class="board" *ngFor="let button of switchBoardButtons" (click)="onButtonClick(button)">
+    <button [ngStyle]="{'background-color': button.background}">{{ button.name }}</button>
+  </div>
+
+</div>

@@ -1,0 +1,18 @@
+<fieldset>
+  <h3>Add a Quote!</h3>
+  <form id="quoteForm" (submit)="onSubmit()" #quoteForm="ngForm">
+
+    <textarea name="quote" form="quoteForm" cols="30" rows="4" [(ngModel)]="newQuote.quote" #newquote="ngModel" required minlength= 4></textarea>
+    <!-- <input class="quoteInput" type="text" name="quote" [(ngModel)]="newQuote.quote" #newquote="ngModel" required minlength= 4> -->
+    <h6 *ngIf="newquote.invalid && newquote.touched" [ngStyle]="{'color': 'red'}">Quote Must Be At Least 4 Characters</h6>
+    
+    <h6>Author: <input class="authorInput" type="text" name="author" [(ngModel)]="newQuote.author" #author='ngModel' required minlength= 1></h6>
+    <h6 *ngIf="author.invalid && author.touched" [ngStyle]="{'color':'red'}">Author Must Be At Least 1 Character</h6>
+    
+    <input type="hidden" name="rating" [(ngModel)]="newQuote.rating">
+
+    <input type="submit" value="Add Quote" [disabled]="quoteForm.invalid">
+    <!-- <p *ngIf="quoteForm.invalid" [ngStyle]="{'color': 'red'}">Please fill out the whole form</p> -->
+
+  </form>
+</fieldset>

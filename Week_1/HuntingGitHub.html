@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>Hunting Github</title>
+    <!-- <script>
+         $(document).ready(
+            function(){
+                $('button').click(function(){
+                // as soon as the AJAX request returns, displayName is invoked and passed data!
+                //https://api.jquery.com/jquery.get/
+                $.get('https://api.github.com/users/GregFriedlander', displayName);
+                });
+            function displayName(data){
+                if (data.login){
+                $('body').append("<p>"+data.login+"</p>");
+                    }
+            }
+            }
+        );
+    </script> -->
+</head>
+<body>
+    <button id="someButton">Click to Get Name</button>
+
+    <div id="name">
+
+    </div>
+
+    <script>
+        
+        var button = document.getElementById("someButton")
+
+        button.addEventListener("click", whatToDoOnClick);
+
+        function whatToDoOnClick(){
+            $.get("https://api.github.com/users/GregFriedlander", displayName)
+        // Notice that displayName is a function that takes in 1 parameter (this is the data that comes back from the API)
+            function displayName(data) {
+                // let name = "<h1> data.login </h1>";
+                document.getElementById("name").innerHTML = "<h1>" + data.login + "</h1>";
+                console.log(data);
+            }
+        }
+    </script>
+</body>
+</html>

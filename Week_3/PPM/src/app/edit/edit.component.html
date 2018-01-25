@@ -1,0 +1,22 @@
+<h3>Edit Form:</h3>
+
+<form (submit)="onSubmit()" #editForm="ngForm"> 
+  <table>
+    <tr>
+      <td>Title:</td>
+      <td><input type="text" name="title" [(ngModel)]="myProduct.title"></td>
+    </tr>
+    <tr>
+      <td>Price:</td>
+      <td><input type="text" name="price" [(ngModel)]="myProduct.price"></td>
+    </tr>
+    <tr>
+      <td>Image:</td>
+      <td><input type="text" name="image" [(ngModel)]="myProduct.image"></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><input type="submit" value="Update Product"></td>
+    </tr>
+  </table>
+</form>

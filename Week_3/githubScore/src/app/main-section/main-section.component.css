@@ -1,0 +1,8 @@
+#score_form {
+    display: inline-block;
+}
+
+#score_score {
+    display: inline-block;
+    margin-left: 50px;
+}

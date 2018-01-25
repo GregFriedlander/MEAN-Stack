@@ -1,0 +1,16 @@
+<fieldset>
+  <a href="">List</a>
+  <a [routerLink]="['/players','addplayer']">Add Player</a>
+  <table>
+    <tr>
+      <th>Player Name</th>
+      <th>Prefered Position</th>
+      <th>Actions</th>
+    </tr>
+    <tr *ngFor="let player of players">
+      <td>{{ player.name }}</td>
+      <td>{{ player.position }}</td>
+      <td><button (click)="onDelete(player._id)">Delete</button></td>
+    </tr>
+  </table>
+</fieldset>

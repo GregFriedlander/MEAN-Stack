@@ -1,0 +1,9 @@
+#activityLog {
+    width: 500px;
+    height: 200px;
+    border: solid black 1px;
+    overflow: scroll;
+}
+p {
+    margin-left: 20px;
+}

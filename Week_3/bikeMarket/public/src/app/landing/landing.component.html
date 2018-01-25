@@ -1,0 +1,7 @@
+<a [routerLink]="['/dashboard','browse']">Browse</a>
+<a [routerLink]="['/dashboard','listings']">My Listings</a>
+<a href="javacript:void(0)" (click)="clickedLogout()">Logout</a>
+
+<h5>Hello {{currentUser.first_name}}</h5>
+
+<router-outlet></router-outlet>

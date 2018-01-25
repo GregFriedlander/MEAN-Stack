@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit Page</title>
+</head>
+<body>
+    <h1>Test</h1>
+    <form action="/dogs/update/<%=dogs[0]._id%>" method="POST">
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" name="name" value="<%= dogs[0].name %>"></td>
+            </tr>
+            <tr>
+                <td>Color:</td>
+                <td><input type="text" name="color" value="<%= dogs[0].color %>"></td>
+            </tr>
+            <tr>
+                <td>Weight:</td>
+                <td><input type="text" name="weight" value="<%= dogs[0].weight %>"</td>
+            </tr>
+        </table>
+        <input type="submit" value="Update Dog!">
+    </form>
+</body>
+</html>

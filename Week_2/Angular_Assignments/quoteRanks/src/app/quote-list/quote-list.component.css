@@ -1,0 +1,20 @@
+.indvQuote{
+    border: solid black 1px;
+    width: 300px;
+}
+
+.quoteContents {
+    display: inline-block;
+    width: 250px;
+    border: solid black 1 px;
+    overflow: scroll;
+}
+.quoteRating {
+    display: inline-block;
+    margin-left: 50px;
+}
+.quoteButtons {
+    display: inline-block;
+    width: 40px;
+    margin-left: 50px;
+}
